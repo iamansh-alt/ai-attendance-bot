@@ -1,0 +1,24 @@
+🧠Technical Logic Flow
+The system operates on a state-aware logic loop to ensure data integrity and a seamless user experience. Here is how the "brain" of the project functions:
+
+Input Trigger: A Telegram message is received via Webhook.
+
+User Verification: The system identifies the user based on their unique Telegram ID.
+
+State Lookup (Google Sheets): The workflow queries the "Attendance" sheet to find the most recent entry for that specific user.
+
+Intent Processing (Gemini AI):
+
+The user's message and their current status (e.g., "Currently Out") are sent to Gemini.
+
+Gemini determines if the message is a "Check-in" or "Check-out" request.
+
+Conditional Branching:
+
+If User is 'Out' and requests 'Check-in': The system creates a new row with a timestamp.
+
+If User is 'In' and requests 'Check-out': The system updates the existing row with a "Time-out" value.
+
+If Request is Invalid: The AI generates a polite clarification message (e.g., "You are already checked in. Did you mean to check out?").
+
+Response: The bot sends a confirmation back to Telegram, closing the loop
