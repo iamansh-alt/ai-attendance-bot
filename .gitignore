@@ -1,0 +1,17 @@
+# Security & Credentials
+.env
+credentials.json
+*.key
+auth.json
+
+# System & Temporary Files
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+dist/
+build/
+
+# n8n Specifics
+.n8n/
+backup/
